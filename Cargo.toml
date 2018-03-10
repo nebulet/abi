@@ -5,6 +5,6 @@ license = "MIT"
 authors = ["Lachlan Sneff <lachlan.sneff@gmail.com>"]
 
 [lib]
-name = "abi"
+name = "nabi"
 
 [dependencies]
