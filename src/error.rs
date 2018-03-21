@@ -133,7 +133,6 @@ pub const ERR_UNAVAILABLE: i32 = -18;
 /// The caller did not have permission to perform
 /// the specified operation.
 pub const ERR_ACCESS_DENIED: i32 = -19;
-
 /// ...
 /// TODO: Add more errors
 
