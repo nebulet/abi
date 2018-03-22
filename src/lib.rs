@@ -1,5 +1,7 @@
 #![no_std]
 #![feature(try_trait)]
+#![feature(concat_idents)]
+#![feature(const_fn)]
 
 pub use self::call::*;
 pub use self::error::*;
