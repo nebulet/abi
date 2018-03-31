@@ -169,7 +169,7 @@ pub static ERROR_STR: [&'static str; 19] = [
     "The operation succeeded.",
     "The system encountered an otherwise unspecified error while performing the operation.",
     "The operation is not implemented, supported, or enabled.",
-    "The system was unable to allocate some resource needed for the operation.",
+    "The system was not able to allocate some resource needed for the operation.",
     "The system was not able to allocate memory needed for the operation.",
     "An argument passed was invalid.",
     "A specified handle value does not refer to a valid handle.",
