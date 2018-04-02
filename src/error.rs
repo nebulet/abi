@@ -58,33 +58,27 @@ impl From<NoneError> for Error {
     }
 }
 
-macro_rules! error_impl {
-    ($name:ident) => {
-        pub const $name : Error = Error::new(concat_idents!(ERR_, $name));
-    };
-}
-
 /// Error implementations
 impl Error {
-    error_impl!(INTERNAL);
-    error_impl!(NOT_SUPPORTED);
-    error_impl!(NO_RESOURCES);
-    error_impl!(NO_MEMORY);
-    error_impl!(INVALID_ARG);
-    error_impl!(BAD_HANDLE);
-    error_impl!(WRONG_TYPE);
-    error_impl!(OUT_OF_BOUNDS);
-    error_impl!(BUFFER_TOO_SMALL);
-    error_impl!(BAD_STATE);
-    error_impl!(TIMED_OUT);
-    error_impl!(SHOULD_WAIT);
-    error_impl!(CANCELLED);
-    error_impl!(PEER_CLOSED);
-    error_impl!(NOT_FOUND);
-    error_impl!(ALREADY_EXISTS);
-    error_impl!(ALREADY_OWNED);
-    error_impl!(UNAVAILABLE);
-    error_impl!(ACCESS_DENIED);
+    pub const INTERNAL: Error = Error::new(ERR_INTERNAL);
+    pub const NOT_SUPPORTED: Error = Error::new(ERR_NOT_SUPPORTED);
+    pub const NO_RESOURCES: Error = Error::new(ERR_NO_RESOURCES);
+    pub const NO_MEMORY: Error = Error::new(ERR_NO_MEMORY);
+    pub const INVALID_ARG: Error = Error::new(ERR_INVALID_ARG);
+    pub const BAD_HANDLE: Error = Error::new(ERR_BAD_HANDLE);
+    pub const WRONG_TYPE: Error = Error::new(ERR_WRONG_TYPE);
+    pub const OUT_OF_BOUNDS: Error = Error::new(ERR_OUT_OF_BOUNDS);
+    pub const BUFFER_TOO_SMALL: Error = Error::new(ERR_BUFFER_TOO_SMALL);
+    pub const BAD_STATE: Error = Error::new(ERR_BAD_STATE);
+    pub const TIMED_OUT: Error = Error::new(ERR_TIMED_OUT);
+    pub const SHOULD_WAIT: Error = Error::new(ERR_SHOULD_WAIT);
+    pub const CANCELLED: Error = Error::new(ERR_CANCELLED);
+    pub const PEER_CLOSED: Error = Error::new(ERR_PEER_CLOSED);
+    pub const NOT_FOUND: Error = Error::new(ERR_NOT_FOUND);
+    pub const ALREADY_EXISTS: Error = Error::new(ERR_ALREADY_EXISTS);
+    pub const ALREADY_OWNED: Error = Error::new(ERR_ALREADY_OWNED);
+    pub const UNAVAILABLE: Error = Error::new(ERR_UNAVAILABLE);
+    pub const ACCESS_DENIED: Error = Error::new(ERR_ACCESS_DENIED);
 }
 
 /// The system encountered an otherwise unspecified error
