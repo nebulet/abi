@@ -15,19 +15,20 @@ impl Error {
         }
     }
 
-    pub fn mux(result: Result<usize>) -> usize {
+    pub fn mux(result: Result<u32>) -> u64 {
         match result {
-            Ok(value) => value,
-            Err(error) => -error.errno as usize,
+            Ok(value) => value as u64,
+            Err(error) => -error.errno as u64,
         }
     }
 
-    pub fn demux(value: usize) -> Result<usize> {
+    pub fn demux(value: u64) -> Result<u32> {
         let errno = -(value as i32);
         if errno > 0 && errno < ERROR_STR.len() as i32 {
             Err(Error::new(errno))
         } else {
-            Ok(value)
+            // truncate
+            Ok(value as u32)
         }
     }
 

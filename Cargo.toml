@@ -7,4 +7,9 @@ authors = ["Lachlan Sneff <lachlan.sneff@gmail.com>"]
 [lib]
 name = "nabi"
 
+[features]
+wasm = []
+default = ["wasm"]
+
 [dependencies]
+bitflags = "1.0"
