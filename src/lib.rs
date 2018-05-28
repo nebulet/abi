@@ -20,3 +20,13 @@ pub mod abi;
 pub mod error;
 
 pub mod common;
+
+#[macro_export]
+macro_rules! internal_error {
+    () => {{
+        if cfg!(debug_assertions) {
+            println!("Internal Error At {} : {}", file!(), line!());
+        }
+        $crate::Error::INTERNAL
+    }}
+}
