@@ -3,7 +3,7 @@ use core::option::NoneError;
 
 pub type Result<T> = result::Result<T, Error>;
 
-#[derive(Eq, PartialEq)]
+#[derive(Eq, PartialEq, Clone, Copy)]
 pub struct Error {
     pub errno: i32,
 }
