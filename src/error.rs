@@ -11,21 +11,21 @@ pub struct Error {
 impl Error {
     pub const fn new(errno: i32) -> Error {
         Error {
-            errno: errno,
+            errno,
         }
     }
 
     pub fn mux(result: Result<u32>) -> u64 {
         match result {
             Ok(value) => value as u64,
-            Err(error) => -error.errno as u64,
+            Err(error) => error.errno as u64,
         }
     }
 
     pub fn demux(value: u64) -> Result<u32> {
-        let errno = -(value as i32);
+        let errno = (-(value as i64)) as i32;
         if errno > 0 && errno < ERROR_STR.len() as i32 {
-            Err(Error::new(errno))
+            Err(Error::new(-errno))
         } else {
             // truncate
             Ok(value as u32)
